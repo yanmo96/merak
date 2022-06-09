@@ -57,7 +57,7 @@ def main():
     hostname = socket.gethostname()
     host_ip = socket.gethostbyname(hostname)
     syslog("Hostname is {} at IP {}".format(hostname, host_ip))
-    address = "10.213.43.112"
+    address = "172.31.150.79"
     project_id = "123456789"
     port_name = "merak_port"
     inner_veth_name = "inner-" + uuid.uuid4().hex[-5:]
