@@ -44,7 +44,7 @@ func RegisterNode(compute []*common_pb.InternalComputeInfo, netConfigId string) 
 	}
 	log.Printf("nodeInfo: %s", nodeInfo)
 	//returnMessage, returnErr := http.RequestCall("http://"+utils.ALCORURL+":30007/nodes/bulk", "POST", nodeInfo, nil)
-	returnMessage, returnErr := http.RequestCall(utils.ALCORURL+"/nodes/bulk", "POST", nodeInfo, nil)
+	returnMessage, returnErr := http.RequestCall(utils.ALCORURLNODE+"/nodes/bulk", "POST", nodeInfo, nil)
 	if returnErr != nil {
 		log.Printf("returnErr %s", returnErr)
 		return "", returnErr
