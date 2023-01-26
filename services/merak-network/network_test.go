@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	common_pb "github.com/futurewei-cloud/merak/api/proto/v1/common"
 	"github.com/futurewei-cloud/merak/services/merak-network/activities"
+	"github.com/futurewei-cloud/merak/services/merak-network/database"
 	"github.com/futurewei-cloud/merak/services/merak-network/utils"
 	"github.com/stretchr/testify/assert"
 	"log"
@@ -57,6 +59,12 @@ func TestNodeRegister(t *testing.T) {
 			expErr: nil,
 			pass:   true,
 		},
+	}
+
+	utils.REDISADDR = "localhost:55000"
+	// Connect to storage
+	if err := database.ConnectDatabase(); err != nil {
+		fmt.Printf("Cannot connect to Redis db!, error: '%s'\n", err)
 	}
 
 	for _, tt := range tests {

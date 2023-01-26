@@ -18,6 +18,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/futurewei-cloud/merak/services/merak-network/utils"
 	"log"
 	"strings"
 
@@ -32,7 +33,7 @@ var (
 
 func ConnectDatabase() error {
 	client := redis.NewClient(&redis.Options{
-		Addr: "merak-redis-network.merak.svc.cluster.local:30053",
+		Addr: utils.REDISADDR,
 		//Username: "default",
 		//Password: "redispw",
 		DB: 0,

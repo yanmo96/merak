@@ -16,6 +16,7 @@ package activities
 import (
 	"encoding/json"
 	common_pb "github.com/futurewei-cloud/merak/api/proto/v1/common"
+	"github.com/futurewei-cloud/merak/services/merak-network/database"
 	"github.com/futurewei-cloud/merak/services/merak-network/entities"
 	"github.com/futurewei-cloud/merak/services/merak-network/http"
 	"github.com/futurewei-cloud/merak/services/merak-network/utils"
@@ -52,7 +53,7 @@ func RegisterNode(compute []*common_pb.InternalComputeInfo, netConfigId string) 
 	var returnJson entities.NodeReturn
 	json.Unmarshal([]byte(returnMessage), &returnJson)
 	log.Printf("returnJson : %+v", returnJson)
-	//database.Set(utils.NODEGROUP+netConfigId, &returnJson)
+	database.Set(utils.NODEGROUP+netConfigId, &returnJson)
 	log.Println("RegisterNode done")
 	return "RegisterNode done", nil
 }
