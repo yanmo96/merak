@@ -25,6 +25,6 @@ const NETCONFIG string = "netconfig:"
 const NODEGROUP string = "nodeGroup:"
 
 var ALCORURL = ""
-var ALCORURLNODE = ALCORURL + "30007"
+var ALCORURLNODE = ALCORURL + ":30007"
 
 var REDISADDR = "merak-redis-network.merak.svc.cluster.local:30053"
