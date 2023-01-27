@@ -70,7 +70,7 @@ func TestNodeRegister(t *testing.T) {
 	for _, tt := range tests {
 		t.Run("register node", func(t *testing.T) {
 			defer tt.server.Close()
-			utils.ALCORURL = tt.server.URL
+			utils.ALCORURLNODE = tt.server.URL
 
 			// Do the Register Node activity
 			returnString, err := activities.RegisterNode(
